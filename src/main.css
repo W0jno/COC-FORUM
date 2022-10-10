@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+span {
+	width: 30%;
+	height: 10%;
+}
+
+.input-form {
+	height: 100px;
+	width: 100%;
+}
+
+input {
+	height: 5rem;
+}
