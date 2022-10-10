@@ -13,7 +13,7 @@
 		<!--REGISTER CONTAINER-->
 		<main class="w-screen h-screen relative flex justify-center items-center">
 			<div
-				class="h-3/4 w-3/12 rounded-large bg-gradient-to-br from-formBackgroundGradient1 to-formBackgroundGradient2 flex flex-col items-center"
+				class="h-3/4 w-3/12 rounded-large bg-gradient-to-br from-formBackgroundGradient1 to-formBackgroundGradient2 flex flex-col items-center shadow-md"
 			>
 				<form class="h-3/5 flex justify-center items-center pt-20">
 					<!-- Form vars-->
@@ -25,15 +25,27 @@
 					</div>
 					<!-- Form input-->
 					<div class="w-3/5 h-full flex items-center flex-col">
-						<input type="text" class="w-4/5 h-10 m-7 border" />
-						<input type="email" class="w-4/5 h-10 m-7 border" />
-						<input type="password" class="w-4/5 h-10 m-7 border" />
-						<input type="password" class="w-4/5 h-10 m-7 border" />
+						<input
+							type="text"
+							class="w-4/5 h-10 m-7 border hover:bg-inputColorHover"
+						/>
+						<input
+							type="email"
+							class="w-4/5 h-10 m-7 border hover:bg-inputColorHover"
+						/>
+						<input
+							type="password"
+							class="w-4/5 h-10 m-7 border hover:bg-inputColorHover"
+						/>
+						<input
+							type="password"
+							class="w-4/5 h-10 m-7 border hover:bg-inputColorHover"
+						/>
 					</div>
 				</form>
 				<button
 					type="submit"
-					class="w-4/5 h-36 text-7xl rounded-large mt-16 bg-btncolor"
+					class="w-4/5 h-36 text-7xl rounded-large mt-16 bg-btncolor hover:bg-btncolorHover shadow-md"
 				>
 					REGISTER
 				</button>

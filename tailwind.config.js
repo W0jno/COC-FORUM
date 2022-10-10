@@ -9,6 +9,8 @@ module.exports = {
 			formBackgroundGradient1: "#FF824F",
 			formBackgroundGradient2: "#FFE248",
 			btncolor: "#fff",
+			btncolorHover: "#fffaaa",
+			inputColorHover: "#fffccc",
 		},
 		borderRadius: {
 			large: "40px",
