@@ -559,8 +559,8 @@ video {
   margin: 1.75rem;
 }
 
-.mt-16 {
-  margin-top: 4rem;
+.mt-5 {
+  margin-top: 1.25rem;
 }
 
 .flex {
@@ -571,44 +571,24 @@ video {
   height: 100vh;
 }
 
-.h-3\/4 {
-  height: 75%;
-}
-
-.h-3\/5 {
-  height: 60%;
-}
-
-.h-full {
-  height: 100%;
-}
-
 .h-10 {
   height: 2.5rem;
 }
 
-.h-36 {
-  height: 9rem;
+.h-20 {
+  height: 5rem;
+}
+
+.h-3\/4 {
+  height: 75%;
 }
 
 .w-screen {
   width: 100vw;
 }
 
-.w-3\/12 {
-  width: 25%;
-}
-
-.w-2\/5 {
-  width: 40%;
-}
-
 .w-full {
   width: 100%;
-}
-
-.w-3\/5 {
-  width: 60%;
 }
 
 .w-4\/5 {
@@ -629,6 +609,10 @@ video {
 
 .rounded-large {
   border-radius: 40px;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
 }
 
 .border {
@@ -668,8 +652,8 @@ video {
   --tw-gradient-to: #FFE248;
 }
 
-.pt-20 {
-  padding-top: 5rem;
+.p-10 {
+  padding: 2.5rem;
 }
 
 .text-center {
@@ -681,9 +665,9 @@ video {
   line-height: 1.75rem;
 }
 
-.text-7xl {
-  font-size: 4.5rem;
-  line-height: 1;
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .shadow-md {
@@ -714,4 +698,57 @@ input {
 .hover\:bg-btncolorHover:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 250 170 / var(--tw-bg-opacity));
+}
+
+@media (min-width: 300px) {
+  .xsm\:h-full {
+    height: 100%;
+  }
+
+  .xsm\:h-4\/5 {
+    height: 80%;
+  }
+
+  .xsm\:h-screen {
+    height: 100vh;
+  }
+
+  .xsm\:w-full {
+    width: 100%;
+  }
+}
+
+@media (min-width: 640px) {
+  .sm\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:h-3\/4 {
+    height: 75%;
+  }
+
+  .md\:w-4\/5 {
+    width: 80%;
+  }
+
+  .md\:rounded-large {
+    border-radius: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:h-3\/4 {
+    height: 75%;
+  }
+
+  .lg\:w-3\/12 {
+    width: 25%;
+  }
+
+  .lg\:rounded-large {
+    border-radius: 40px;
+  }
 }
