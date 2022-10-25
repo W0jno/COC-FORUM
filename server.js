@@ -7,21 +7,18 @@ const port = 3000;
 const path = require("path");
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
+const bodyParser = require("body-parser");
 
 //ROUTERS
-const registerRouter = require("./routes/register");
-const loginRouter = require("./routes/login");
+const registerRouter = require("./routes/register/register");
+const loginRouter = require("./routes/login/login");
 
 mongoose
-	.connect("mongodb://localhost:27017/cocForum", {
-		dbName: "dupa",
-		//useNewUrlPraser: true,
-		useUnifiedTopology: true,
-	})
+	.connect("mongodb://0.0.0.0:27017/cocForum", {})
 	.then(() => console.log("Connected to MongoDB"))
 	.catch((error) => console.log(error));
 
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
