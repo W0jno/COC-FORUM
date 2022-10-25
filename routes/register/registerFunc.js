@@ -3,13 +3,14 @@ const router = express.Router();
 const path = require("path");
 const bcrypt = require("bcrypt");
 const user = require("../../models/user");
+const { nextTick } = require("process");
 
-const register = (username, email, password, res) => {
+const register = async (username, email, password, res) => {
 	user.init();
 	new user({
 		name: username,
 		email: email,
-		password: password,
+		password: await bcrypt.hash(password, 5),
 	}).save((err) => {
 		return err;
 	});
