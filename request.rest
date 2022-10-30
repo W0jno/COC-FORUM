@@ -1,0 +1,30 @@
+GET http://localhost:3000/users
+
+###
+POST http://localhost:3000/api/register
+Content-Type: 'application/json'
+
+{
+    "username": "huj",
+    "email" : "huj@huj",
+    "password": "huj",
+}
+
+###
+GET http://localhost:3000/api/register/showUser
+###
+
+POST http://localhost:3000/api/login
+Content-Type: application/json
+
+{
+    "email": "test@test",
+    "password": "test"
+}
+
+### 
+POST http://localhost:3000/api/login/find
+
+{
+    "email": "test@test",
+}

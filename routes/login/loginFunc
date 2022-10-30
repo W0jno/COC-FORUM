@@ -1,0 +1,33 @@
+const express = require("express");
+const router = express.Router();
+const path = require("path");
+const bcrypt = require("bcrypt");
+const user = require("../../models/user");
+
+
+const login = async (email, password,res) =>{
+
+    
+    const User = await user.findOne({
+       "email": email})
+    
+    if(User == null) res.status(400).send("nie ma takiego uzytkownika")
+
+    try{
+        if( await bcrypt.compare(password, User.password)) {
+            res.send("zalogowales sie")
+        }
+    } catch{
+        
+        res.status(500).send("nie dziala :DD")
+    }
+}
+
+const find =async (email, res) =>{
+    const dupa = await user.findOne({"email" : email}).clone();
+    res.json(dupa);
+}
+
+
+
+module.exports = {login, find};

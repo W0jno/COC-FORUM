@@ -10,18 +10,20 @@
 	<body
 		class="bg-gradient-to-r from-backgroundGradient1 to-backgroundGradient2"
 	>
-		<!--REGISTER CONTAINER-->
+		<!--LOGIN CONTAINER-->
 		<main class="w-screen h-screen relative flex justify-center items-center">
 			<div
 				class="lg:h-3/4 md:h-3/4 xsm:w-full xsm:h-screen xsm:rounded-none md:w-4/5 lg:w-3/12 lg:rounded-large md:rounded-large bg-gradient-to-br from-formBackgroundGradient1 to-formBackgroundGradient2 flex flex-col items-center justify-center shadow-md p-10"
 			>
-				<form action="/login.js" method="POST" class="">
+				<form action="/api/login" method="POST" class="">
 					<div>
 						<span class="text-center text-xl m-7 w-full">Email</span>
 						<input
 							required
 							placeholder="example@example.com"
 							type="email"
+							id="email"
+							name="email"
 							class="w-4/5 h-10 m-7 border hover:bg-inputColorHover"
 						/>
 					</div>
@@ -32,6 +34,8 @@
 							required
 							placeholder="••••••••"
 							type="password"
+							id="password"
+							name="password"
 							class="w-4/5 h-10 m-7 border hover:bg-inputColorHover"
 						/>
 					</div>
