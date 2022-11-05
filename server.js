@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = 4000;
 const path = require("path");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
@@ -14,9 +14,9 @@ const loginRouter = require("./routes/login/login");
 //CONNECTION TO DATABASE
 
 mongoose
-	.connect(process.env.MONGO_URI, {})
-	.then(() => console.log("Connected to MongoDB"))
-	.catch((error) => console.log(error));
+  .connect("mongodb+srv://root:root@cocforum.jzxjuqu.mongodb.net/test", {})
+  .then(() => console.log("Connected to MongoDB"))
+  .catch((error) => console.log(error));
 
 //SERVER CONFIGURATION
 
