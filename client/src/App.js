@@ -1,14 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+//import { BrowserRouter, Route } from "react-router-dom";
+import Register from "./pages/Register"
+//import Login from "./pages/Login"
 
 function App() {
   return (
-    <div className="App">
-      <h2>Gowno</h2>
-      <div className="App-header">
-      </div>
-      
-    </div>
+    <React.Fragment>
+    <Register />
+    </React.Fragment>
   );
 }
 
