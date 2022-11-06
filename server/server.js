@@ -5,15 +5,16 @@ const cors = require("cors");
 const path = require("path");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+const dbCon = require("./databaseConnection");
 dotenv.config();
 
 app.use(
-  cors({
-    credentials: true,
-    origin: (_, callback) => {
-      callback(null, true);
-    },
-  })
+	cors({
+		credentials: true,
+		origin: (_, callback) => {
+			callback(null, true);
+		},
+	})
 );
 app.use(express.json());
 
@@ -24,10 +25,7 @@ const loginRouter = require("./routes/login/login");
 
 //CONNECTION TO DATABASE
 
-mongoose
-  .connect("mongodb+srv://root:root@cocforum.jzxjuqu.mongodb.net/test", {})
-  .then(() => console.log("Connected to MongoDB"))
-  .catch((error) => console.log(error));
+dbCon();
 
 //SERVER CONFIGURATION
 
@@ -35,8 +33,8 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 app.use(
-  express.urlencoded({ extended: true }),
-  express.static(path.join(__dirname, "public"))
+	express.urlencoded({ extended: true }),
+	express.static(path.join(__dirname, "public"))
 );
 
 app.use("/", registerRouter);

@@ -3,25 +3,21 @@ const router = express.Router();
 const path = require("path");
 const bcrypt = require("bcrypt");
 const user = require("../../models/user");
+const User = require("../../models/user");
 
 const register = async (username, email, password, res) => {
-  user.init();
+	user.init();
 
-  const hashedPasswd = await bcrypt.hash(password, 10);
-  //console.log(hashedPasswd)
-  new user({
-    username: username,
-    email: email,
-    password: hashedPasswd,
-  }).save((err) => {
-    res.json({dupa:"zarejestrowano"});
-    return err;
-  });
+	const hashedPasswd = await bcrypt.hash(password, 10);
+
+	new user({
+		username: username,
+		email: email,
+		password: hashedPasswd,
+	}).save((err) => {
+		res.json({ dupa: "zarejestrowano" });
+		return err;
+	});
 };
 
-const showUser = async () => {
-  let res = await user.find();
-  return res;
-};
-
-module.exports = { register, showUser };
+module.exports = register;
