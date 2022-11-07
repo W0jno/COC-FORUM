@@ -10,12 +10,7 @@ router.get("/register", (req, res) => {
 
 router.post("/api/register", (req, res) => {
 	console.log(req.body);
-	registerFunc.register(
-		req.body.username,
-		req.body.email,
-		req.body.password,
-		res
-	);
+	registerFunc(req.body.username, req.body.email, req.body.password, res);
 });
 
 router.get("/api/register/showUser", (req, res) => {
