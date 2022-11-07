@@ -1,10 +1,12 @@
 import React from "react";
 
-import classes from "./Card.module.css";
-
 const Card = (props) => {
   return (
-    <div className={`${classes.card} ${props.className}`}>{props.children}</div>
+    <div
+      className={`xsm:rounded-none lg:rounded-large md:rounded-large shadow-md p-10 ${props.className}`}
+    >
+      {props.children}
+    </div>
   );
 };
 

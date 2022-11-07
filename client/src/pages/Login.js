@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Input from "../components/Forms/Input";
-import Card from "../components/UI/Card/Card";
+import InputForm from "../components/Forms/InputForm";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -25,29 +25,25 @@ const Login = () => {
   };
 
   return (
-    <Card>
-      <form onSubmit={loginUser}>
-        <Input
-          label="E-mail"
-          id="email"
-          type="email"
-          placeholder="example@example.com"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-        />
-        <Input
-          label="Password"
-          id="password"
-          type="password"
-          placeholder="••••••••"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-        />
-        <div>
-          <button type="submit">Login</button>
-        </div>
-      </form>
-    </Card>
+        <InputForm onSubmit={loginUser} btnText={"LOGIN"}>
+          <Input
+            label="E-mail"
+            id="email"
+            type="email"
+            placeholder="example@example.com"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+          />
+          <Input
+            label="Password"
+            id="password"
+            type="password"
+            placeholder="••••••••"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+          />
+        </InputForm>
+
   );
 };
 export default Login;

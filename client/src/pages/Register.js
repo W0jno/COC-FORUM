@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Input from "../components/Forms/Input";
 import Card from "../components/UI/Card/Card";
+import InputForm from "../components/Forms/InputForm";
 
 const Register = () => {
   const [username, setUsername] = useState("");
@@ -28,8 +29,7 @@ const Register = () => {
   };
 
   return (
-    <Card>
-      <form onSubmit={registerUser}>
+      <InputForm onSubmit={registerUser} btnText="REGISTER">
         <Input
           value={username}
           label="Username"
@@ -54,11 +54,7 @@ const Register = () => {
           onChange={(e) => setPassword(e.target.value)}
           value={password}
         />
-        <div>
-          <button type="submit">Register</button>
-        </div>
-      </form>
-    </Card>
+      </InputForm>
   );
 };
 export default Register;

@@ -6,7 +6,7 @@ import Login from "./pages/Login"
 function App() {
   return (
     <React.Fragment>
-    <Login />
+    <Register/>
     </React.Fragment>
   );
 }
