@@ -13,9 +13,9 @@ const login = async (email, password, res) => {
 
 	try {
 		if (await bcrypt.compare(password, User.password)) {
-			res.send("zalogowales sie");
+			res.json({dupa: "zalogowales sie"});
 		} else {
-			res.send("zle haslo");
+			res.json({dupa: "zle haslo"});
 		}
 	} catch {
 		res.status(500).send("cos sie popsulo");
