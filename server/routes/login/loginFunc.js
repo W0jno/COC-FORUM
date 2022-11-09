@@ -9,13 +9,13 @@ const login = async (email, password, res) => {
 		email: email,
 	});
 
-	if (User == null) return res.send("nie ma takiego uzytkownika");
+	if (User == null) return res.json("nie ma takiego uzytkownika typie");
 
 	try {
 		if (await bcrypt.compare(password, User.password)) {
-			res.json({dupa: "zalogowales sie"});
+			res.json({ status: "zalogowales sie" });
 		} else {
-			res.json({dupa: "zle haslo"});
+			res.json({ status: "zle HASLO!!!!!!111!" });
 		}
 	} catch {
 		res.status(500).send("cos sie popsulo");
