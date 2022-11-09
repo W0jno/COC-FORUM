@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Input from "../components/Forms/Input";
-import Card from "../components/UI/Card/Card";
+import InputForm from "../components/Forms/InputForm";
 
 const Register = () => {
   const [username, setUsername] = useState("");
@@ -28,8 +28,8 @@ const Register = () => {
   };
 
   return (
-    <Card>
-      <form onSubmit={registerUser}>
+    <main className="bg-gradient-to-r from-backgroundGradient1 to-backgroundGradient2 w-screen h-screen relative flex justify-center items-center">
+      <InputForm onSubmit={registerUser} btnText="REGISTER">
         <Input
           value={username}
           label="Username"
@@ -54,11 +54,8 @@ const Register = () => {
           onChange={(e) => setPassword(e.target.value)}
           value={password}
         />
-        <div>
-          <button type="submit">Register</button>
-        </div>
-      </form>
-    </Card>
+      </InputForm>
+    </main>
   );
 };
 export default Register;
