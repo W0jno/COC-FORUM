@@ -9,9 +9,4 @@ router.post("/api/register", (req, res) => {
 	registerFunc(req.body.username, req.body.email, req.body.password, res);
 });
 
-router.get("/api/register/showUser", (req, res) => {
-	registerFunc.showUser().then((users) => {
-		res.json(users);
-	});
-});
 module.exports = router;

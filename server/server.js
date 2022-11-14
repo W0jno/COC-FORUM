@@ -3,9 +3,11 @@ const app = express();
 const port = 4000;
 const cors = require("cors");
 const path = require("path");
-const mongoose = require("mongoose");
+const cookieParser = require("cookie-parser");
+
 const dotenv = require("dotenv");
 const dbCon = require("./databaseConnection");
+const auth = require("./routes/login/loginFunc");
 dotenv.config();
 
 app.use(
@@ -17,11 +19,13 @@ app.use(
 	})
 );
 app.use(express.json());
+app.use(cookieParser());
 
 //ROUTERS
 
 const registerRouter = require("./routes/register/register");
 const loginRouter = require("./routes/login/login");
+const postRouter = require("./routes/post/post");
 
 //CONNECTION TO DATABASE
 
@@ -39,5 +43,10 @@ app.use(
 
 app.use("/", registerRouter);
 app.use("/", loginRouter);
+app.use("/", postRouter);
+
+app.get("/api/users", auth.authenticate, (req, res) => {
+	res.send("huej");
+});
 
 app.listen(port, () => console.log("serwer smiga gosciu"));
