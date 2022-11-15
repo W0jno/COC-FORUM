@@ -1,4 +1,4 @@
-import Button from "../UI/Button";
+import ButtonNavbar from "./ButtonNavbar";
 import logo from "../../assets/logo-navbar.png";
 
 const Navbar = () => {
@@ -8,11 +8,12 @@ const Navbar = () => {
         <img src={logo} className="object-cover w-56 h-max" alt="logo" />
       </div>
       <section className="flex justify-evenly items-center ">
-        <Button>Login</Button>
-        <Button>Register</Button>
+        <ButtonNavbar>Login</ButtonNavbar>
+        <ButtonNavbar>Register</ButtonNavbar>
       </section>
     </header>
   );
 };
 
 export default Navbar;
+ 

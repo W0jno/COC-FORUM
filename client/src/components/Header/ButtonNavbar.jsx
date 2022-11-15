@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const Button = (props) => {
+const ButtonNavbar = (props) => {
   return (
     <button
       type={props.type || "button"}
@@ -14,4 +14,4 @@ const Button = (props) => {
   );
 };
 
-export default Button;
+export default ButtonNavbar;
