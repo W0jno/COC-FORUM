@@ -12,7 +12,7 @@ const createPost = async (title, content, category, tags, res) => {
 		category: category,
 		tags: tags,
 	}).save((err) => {
-		res.json({ status: "post dodany" });
+		res.json({ status: "ok", msg: "post dodany" });
 
 		return err;
 	});

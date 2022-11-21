@@ -8,6 +8,12 @@ module.exports = {
       boxShadow: {
         "card-shadow": "0 2px 8px rgba(0, 0, 0, 0.26)",
       },
+      height: {
+        "30vh": "30vh",
+      },
+      left: {
+        "10": "10%"
+      }
     },
     fontFamily: { sans: "Fredoka One" },
     colors: {
