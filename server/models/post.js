@@ -5,6 +5,10 @@ const postSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 	},
+	createdBy: {
+		type: String,
+		required: true,
+	},
 	content: {
 		type: String,
 		required: true,
@@ -14,15 +18,12 @@ const postSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 	},
-	tags: {
-		type: String,
-		required: false,
-	},
 	createdAt: {
 		type: Date,
 		immutable: true,
 		default: () => Date.now(),
 	},
+	comment: [{}],
 });
 
 const Post = mongoose.model("Post", postSchema);
