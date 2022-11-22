@@ -23,7 +23,19 @@ const postSchema = new mongoose.Schema({
 		immutable: true,
 		default: () => Date.now(),
 	},
-	comment: [{}],
+	comments: [
+		{
+			content: {
+				type: String,
+				required: false,
+			},
+
+			createdBy: {
+				type: String,
+				required: false,
+			},
+		},
+	],
 });
 
 const Post = mongoose.model("Post", postSchema);
