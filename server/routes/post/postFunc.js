@@ -4,13 +4,13 @@ const path = require("path");
 const bcrypt = require("bcrypt");
 const post = require("../../models/post");
 
-const createPost = async (title, content, category, tags, res) => {
+const createPost = async (title, content, category, currentUser, res) => {
 	post.init();
 	new post({
 		title: title,
 		content: content,
 		category: category,
-		tags: tags,
+		createdBy: currentUser,
 	}).save((err) => {
 		res.json({ status: "ok", msg: "post dodany" });
 

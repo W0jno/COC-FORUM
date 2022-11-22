@@ -1,19 +1,31 @@
 const express = require("express");
-const { default: mongoose } = require("mongoose");
 const router = express.Router();
-const path = require("path");
 const postFunc = require("../post/postFunc");
-const post = require("../../models/post.js");
+const auth = require("../login/loginFunc");
+const jwt_decode = require("jwt-decode");
+const user = require("../../models/user.js");
 
-router.post("/api/post", (req, res) => {
-	console.log(req.body);
+router.post("/api/post", auth.authenticate, async (req, res) => {
+	const token = req.cookies.JWT;
+	const decoded = jwt_decode(token);
+	const currentUser = await user.findById(decoded.id);
 	postFunc(
 		req.body.title,
 		req.body.content,
 		req.body.category,
-		req.body.tags,
+		currentUser.username,
 		res
 	);
 });
+/* const getCurrentUsername = async (token) => {
+	const decoded = jwt_decode(token);
+	if (token) {
+		const currentUser = await user.findById(decoded.id);
+		return currentUser;
+		//console.log(currentUser.username);
+	} else {
+		console.log("nie dziala ");
+	}
+}; */
 
 module.exports = router;

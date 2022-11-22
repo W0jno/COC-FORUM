@@ -26,6 +26,7 @@ app.use(cookieParser());
 const registerRouter = require("./routes/register/register");
 const loginRouter = require("./routes/login/login");
 const postRouter = require("./routes/post/post");
+const showPostRouter = require("./routes/post/showPost");
 
 //CONNECTION TO DATABASE
 
@@ -44,6 +45,7 @@ app.use(
 app.use("/", registerRouter);
 app.use("/", loginRouter);
 app.use("/", postRouter);
+app.use("/", showPostRouter);
 
 app.get("/api/users", auth.authenticate, (req, res) => {
 	res.send("huej");
