@@ -12,11 +12,15 @@ const Navbar = (props) => {
     navigate("/register");
   }
 
+  const homeClickHandler = () =>{
+    navigate("/");
+  }
+
 
 
   return (
     <header className="flex justify-between bg-gradient-to-r from-backgroundGradient1 to-backgroundGradient2 w-full p-2 text-xl text-slate-800 h-50 pr-5 pl-5">
-      <div className="">
+      <div onClick={homeClickHandler}>
         <img src={logo} className="object-cover w-56 h-max" alt="logo" />
       </div>
       {!props.isLoggedIn && (
