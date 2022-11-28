@@ -25,6 +25,7 @@ module.exports = {
       btncolorHover: "#fffaaa",
       inputColorHover: "#fffccc",
       slate: colors.slate,
+      indigo: colors.indigo
     },
     borderRadius: {
       large: "40px",
