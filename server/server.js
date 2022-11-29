@@ -28,6 +28,7 @@ const loginRouter = require("./routes/login/login");
 const postRouter = require("./routes/post/post");
 const showPostRouter = require("./routes/post/showPost");
 const showCommentRouter = require("./routes/post/comment");
+const deletePost = require("./routes/delete/deletePost");
 
 //CONNECTION TO DATABASE
 
@@ -48,9 +49,6 @@ app.use("/", loginRouter);
 app.use("/", postRouter);
 app.use("/", showPostRouter);
 app.use("/", showCommentRouter);
-
-app.get("/api/users", auth.authenticate, (req, res) => {
-	res.send("huej");
-});
+app.use("/", deletePost);
 
 app.listen(port, () => console.log("serwer smiga gosciu"));
