@@ -3,17 +3,13 @@ import Navbar from "../components/Header/Navbar";
 import jwtDecode from "jwt-decode";
 import Cookies from "js-cookie";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import PostList from "../components/Posts/PostList";
 
 const Home = () => {
   const [authStatus, setAuthStatus] = useState(false);
-  const navigate = useNavigate();
   useEffect(() => {
     try {
       const token = jwtDecode(Cookies.get("JWT"));
-      console.log(token);
-
       if (token.id) {
         setAuthStatus(true);
       } else {
@@ -39,7 +35,7 @@ const Home = () => {
       }
       const data = await response.json();
 
-      const transformedPosts = data.map((postData) => {
+      const transformedPosts = data.slice(0).reverse().map((postData) => {
         return {
           id: postData._id,
           title: postData.title,
