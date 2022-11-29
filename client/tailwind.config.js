@@ -10,10 +10,15 @@ module.exports = {
       },
       height: {
         "30vh": "30vh",
+        "60vh": "60vh",
+      },
+      minHeight: {
+        "30vh": "30vh",
+        10: "2.5rem",
       },
       left: {
-        "10": "10%"
-      }
+        10: "10%",
+      },
     },
     fontFamily: { sans: "Fredoka One" },
     colors: {
@@ -25,7 +30,7 @@ module.exports = {
       btncolorHover: "#fffaaa",
       inputColorHover: "#fffccc",
       slate: colors.slate,
-      indigo: colors.indigo
+      indigo: colors.indigo,
     },
     borderRadius: {
       large: "40px",
