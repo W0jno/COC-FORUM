@@ -12,7 +12,6 @@ router.post("/api/post", auth.authenticate, async (req, res) => {
 	postFunc(
 		req.body.title,
 		req.body.content,
-		req.body.category,
 		currentUser.username,
 		res
 	);

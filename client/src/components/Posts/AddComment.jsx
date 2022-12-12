@@ -46,7 +46,7 @@ const AddComment = (props) => {
         value={commentValue}
         onInput={inputChangeHandler}
       />
-      <div className="w-40 h-full flex items-end text-sm">
+      <div className="w-44 h-full flex items-end text-sm">
         <button
           onClick={addCommentHandler}
           className="shadow bg-btncolor rounded-lg h-8 ml-10 w-full"

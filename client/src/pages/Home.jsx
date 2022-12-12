@@ -66,7 +66,7 @@ const Home = () => {
   let postList = <p>Found no posts.</p>;
 
   if (posts.length > 0) {
-    postList = <PostList posts={posts} />;
+    postList = <PostList posts={posts} isRemovable={false}/>;
   }
 
   if (error) {

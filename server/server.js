@@ -23,13 +23,14 @@ app.use(cookieParser());
 
 //ROUTERS
 
-const registerRouter = require("./routes/register/register");
-const loginRouter = require("./routes/login/login");
-const postRouter = require("./routes/post/post");
-const showPostRouter = require("./routes/post/showPost");
-const showCommentRouter = require("./routes/post/comment");
-const deletePost = require("./routes/delete/deletePost");
-const selectPost = require("./routes/post/selectPost");
+const registerRouter = require("./routes/register/register")
+const loginRouter = require("./routes/login/login")
+const postRouter = require("./routes/post/post")
+const showPostRouter = require("./routes/post/showPost")
+const showCommentRouter = require("./routes/post/comment")
+const deletePost = require("./routes/delete/deletePost")
+const selectPost = require("./routes/post/selectPost")
+const showUserPosts = require("./routes/post/showUserPosts") 
 
 //CONNECTION TO DATABASE
 
@@ -45,13 +46,14 @@ app.use(
 	express.static(path.join(__dirname, "public"))
 );
 
-app.use("/", registerRouter);
-app.use("/", loginRouter);
-app.use("/", postRouter);
-app.use("/", showPostRouter);
-app.use("/", showCommentRouter);
-app.use("/", deletePost);
-app.use("/", selectPost);
+app.use("/", registerRouter)
+app.use("/", loginRouter)
+app.use("/", postRouter)
+app.use("/", showPostRouter)
+app.use("/", showCommentRouter)
+app.use("/", deletePost)
+app.use("/", selectPost)
+app.use("/", showUserPosts)
 app.get("/api/users", auth.authenticate, (req, res) => {
 	res.send("huej");
 });

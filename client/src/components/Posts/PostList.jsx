@@ -12,6 +12,7 @@ const PostList = (props) => {
               title={post.title}
               date={post.date}
               content={post.content}
+              isRemovable={props.isRemovable}
             />
           </li>
         </Link>
